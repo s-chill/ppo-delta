@@ -17,9 +17,9 @@ class PolicyNetwork(nn.Module):
         self.fc5 = nn.Linear(16, action_dim)
 
         ## Used the tanh function as discussed in the meeting (and the original paper)
-        self.activation = nn.tanh()
+        self.activation = nn.Tanh()
         self.dropout = nn.Dropout(dropout_rate) ## Might not be necessary. Defaulted it to 0.0.
-        self.softmax = nn.functional.Softmax(dim = -1)
+        self.softmax = nn.functional.softmax
 
     def forward(self, x):
         x = self.activation(self.fc1(x))
@@ -34,7 +34,7 @@ class PolicyNetwork(nn.Module):
         x = self.activation(self.fc4(x))
         x = self.dropout(x)
 
-        x = self.softmax(self.fc5(x))
+        x = self.softmax(self.fc5(x), dim=-1)
         return x
     
 class ValueNetwork(nn.Module):
@@ -54,7 +54,7 @@ class ValueNetwork(nn.Module):
         self.fc5 = nn.Linear(16, output_dim)
 
         ## Used the tanh function as discussed in the meeting (and the original paper)
-        self.activation = nn.tanh()
+        self.activation = nn.Tanh()
         self.dropout = nn.Dropout(dropout_rate) ## Might not be necessary. Defaulted it to 0.0.
 
     def forward(self, x):
