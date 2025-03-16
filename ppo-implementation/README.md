@@ -51,7 +51,7 @@ This implementation can be run in two ways: **Local Machine** or **Google Colab*
 ## 4. Performance Note
 
 - **Timesteps Warning:**  
-  Running cells with **1,000,000 timesteps** may take approximately **5-10 minutes each**.  
+  Running cells with **1,000,000 timesteps** may take approximately **5-10 minutes each** depending on your hardware.
   For testing functionality, consider reducing the number of timesteps.
 
 ---

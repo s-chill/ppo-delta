@@ -9,6 +9,19 @@ import torch.nn as nn
 from torch.distributions import MultivariateNormal
 import torch.nn.functional as F
 
+
+if torch.cuda.is_available():
+    torch.set_default_device("cuda")
+elif torch.backends.mps.is_available():  # For Apple Metal (M1/M2 chips)
+    torch.set_default_device("mps")
+elif torch.backends.opencl.is_available():  # OpenCL support
+    torch.set_default_device("opencl")
+else:
+    torch.set_default_device("cpu")
+
+print("Torch is using device:", torch.get_default_device())
+
+
 class PPO:
 	def __init__(self, env, **hyperparameters):
 		self._init_hyperparameters(hyperparameters)
