@@ -56,4 +56,13 @@ This implementation can be run in two ways: **Local Machine** or **Google Colab*
 
 ---
 
+
+## 4. Delta Implementation
+Open the `DeltaImplementation.ipynb` notebook.
+- 
+
+> **Note:** Separate files specifically for the delta implementation should be run instead - network_attn.py, ppo_attn.py, network_act.py. To run experiment 1, ppo_attn.py was run in conjunction with network_attn.py with the use 'use_attention' parameter enabled. To run experiment 2, ppo_attn.py was run in conjunction with network_act.py with the 'use_attention' parameter disabled. The notebook runs these experiments accordingly. 
+
+---
+
 Enjoy experimenting with the PPO implementation!
