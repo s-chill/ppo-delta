@@ -57,7 +57,7 @@ This implementation can be run in two ways: **Local Machine** or **Google Colab*
 ---
 
 
-## 4. Delta Implementation
+## 5. Delta Implementation
 Open the `DeltaImplementation.ipynb` notebook.
 - 
 
